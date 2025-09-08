@@ -17,8 +17,20 @@ rl.question("Enter your choice (1-3)", choice =>{
     if (choice=== "1"){
         console.log ("Hello There!");
     } else if (choice === "2"){
-        console.log("Factorial");
-        rl.question ("Enter a number for a factorial:", (numStr) =>{
+    ComputeFactorial();
+
+    }else if (choice === "3"){
+        console.log ("Exiting program...Goodbye!");
+        rl.close()
+    }else{
+        console.log("Invalid choice. Please Try Again");
+        mainMenu();
+        
+    }
+})
+}
+function ComputeFactorial(){
+     rl.question ("Enter a number for a factorial:", (numStr) =>{
             let num = parseInt(numStr);
 
             if (isNaN(num)|| num <0){
@@ -35,14 +47,5 @@ rl.question("Enter your choice (1-3)", choice =>{
 
             }
         });
-
-    }else if (choice === "3"){
-        console.log ("Exiting program...Goodbye!");
-        rl.close()
-    }else{
-        console.log("Invalid choice. Please Try Again");
-        mainMenu();
-    }
-})
 }
 mainMenu();
