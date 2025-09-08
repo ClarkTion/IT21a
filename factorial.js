@@ -6,6 +6,7 @@ const rl = readline.createInterface({
 })
 
 function mainMenu(){
+
 console.log ("Factorial Application");
 
 console.log ("1. Say Hello");
@@ -40,7 +41,8 @@ rl.question("Enter your choice (1-3)", choice =>{
         rl.close()
     }else{
         console.log("Invalid choice. Please Try Again");
+        mainMenu();
     }
 })
 }
-
+mainMenu();
