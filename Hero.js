@@ -22,5 +22,16 @@ class Warrior extends Hero{
     const warrior = new Warrior("Thorin", 100, 10);
     warrior.useAbility();
 
-//const hero = new Hero("Thorin", 100, 10);
-//console.log (hero.getHealth());
+
+class Archmage extends Hero{
+    constructor(name,health,attack,mana){
+        super(name,health,attack);
+        this.mana = mana;
+    }
+    useAbility(){
+         console.log(`${this.name} uses AVADA KEDAVA`);
+    }
+}
+
+    const archmage = new Archmage("Voldemort", 100, 10);
+    archmage.useAbility(); 
