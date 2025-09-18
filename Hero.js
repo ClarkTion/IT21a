@@ -4,12 +4,34 @@ class Hero{
         this.name = name;
         this.#health = health;
         this.attack = attack;
+        this.items =[];
     }
     getHealth(){
         return this.#health;
-
     }
 
+    getName(){
+        console.log(this.name);
+    }
+
+    getAttack(){
+        console.log(this.attack);
+    }
+
+    getStats(){
+        console.log("\n");
+        console.log("Name: " +this.name);
+        console.log("Health: " +this.#health);
+        console.log("Attack: " +this.attack);
+    }
+
+    addItem(item){
+        this.items.push(item);
+    }
+    
+    totalAttack(){
+        return this.attack + this.items.reduce((sum,i)=>sum+i.bonusAttack,0);
+    }
     
 }
 
@@ -19,8 +41,7 @@ class Warrior extends Hero{
 
     }
 }
-    const warrior = new Warrior("Thorin", 100, 10);
-    warrior.useAbility();
+
 
 
 class Archmage extends Hero{
@@ -33,5 +54,31 @@ class Archmage extends Hero{
     }
 }
 
-    const archmage = new Archmage("Voldemort", 100, 10);
-    archmage.useAbility(); 
+function performAbility(hero){
+    console.log("\n");
+    hero.useAbility();
+
+}
+
+class Item {
+    constructor(name, bonusAttack){
+        this.name = name;
+        this.bonusAttack = bonusAttack;
+    }
+}
+
+const sword = new Item ("Sword", 5);
+const staff = new Item ("Staff", 3);
+
+    const Thorin = new Warrior("Thorin", 100, 10);
+    Thorin.getName();
+    Thorin.getAttack();
+    Thorin.addItem(sword);
+    console.log(Thorin.totalAttack());
+
+    // const Voldemort = new Archmage("Voldemort", 100, 10);
+    // archmage.useAbility(); 
+    // Voldemort.getStats();
+
+    // performAbility(Thorin);
+  //  performAbility(Voldemort);
