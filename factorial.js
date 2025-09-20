@@ -62,7 +62,7 @@ function backtomenu(){
             mainMenu();
         } else if (backtomenuChoice === "2"){
             console.log ("Exiting program .... Goodbye");
-            rl.close
+            rl.close()
         } else {
             console.log("Invalid Choice. Please try again");
             backtomenu();
