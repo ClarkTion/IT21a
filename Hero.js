@@ -68,17 +68,19 @@ class Item {
 }
 
 const sword = new Item ("Sword", 5);
-const staff = new Item ("Staff", 3);
+const staff = new Item ("Tom Riddle's Wand", 10000);
 
-    const Thorin = new Warrior("Thorin", 100, 10);
-    Thorin.getName();
-    Thorin.getAttack();
-    Thorin.addItem(sword);
-    console.log(Thorin.totalAttack());
+    // const Thorin = new Warrior("Thorin", 100, 10);
+    // Thorin.getName();
+    // Thorin.getAttack();
+    // Thorin.addItem(sword);
+    // console.log(Thorin.totalAttack());
 
-    // const Voldemort = new Archmage("Voldemort", 100, 10);
-    // archmage.useAbility(); 
-    // Voldemort.getStats();
+    const Voldemort = new Archmage("Voldemort", 100, 10000, 50000);
+    Voldemort.useAbility(); 
+    Voldemort.getStats();
+    Voldemort.addItem(staff);
+    console.log(Voldemort.totalAttack());
 
     // performAbility(Thorin);
   //  performAbility(Voldemort);
